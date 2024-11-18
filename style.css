@@ -65,11 +65,12 @@ body{
     background-color: cadetblue;
     height: 50vh;
 }
-/* .nav{
+.header{
     position: sticky;
     top: 0;
-    z-index: 10;
-} */
+    z-index: 1000;
+
+} 
 .services{
     text-align: center;
     height: 50vh;
@@ -111,4 +112,24 @@ header{
   z-index: -1;
   font-family: roboto;
    
+}
+.container {
+    @media (max-width:900px) {
+        display:block;
+    }
+}
+.header{
+    @media (max-width:900px){
+        display: block;
+    }
+}
+.container-s{
+    @media (max-width:900px) {
+
+        display: block;
+        
+    }
+}
+.footer{
+    height: 100vh;
 }
