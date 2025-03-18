@@ -1,135 +1,162 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.nav{
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    margin-top: 10px; 
-    height: 20vh; 
-   
-   
+/* General Styles */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-.nav a {
-    text-decoration: none;
-    color: whitesmoke;
-    font-weight: 300;
-    
 
+body {
+  background-color: #1c1c1c;
+  color: whitesmoke;
+  font-size: 18px;
 }
+
+/* Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+}
+
 .nav li {
-    text-decoration: none;
-   display: inline;
-   margin-left: 15px;
-   margin: 10px;
-   padding: 10px;
-   
-   
+  margin: 0 15px;
 }
-body{
-    background-color:#1c1c1c;
-    font-size: 20px;
-    color: whitesmoke;
-}
-.logo{
-    font-size: x-large;
-    font-weight: bold;
-    margin: 10px;
-}
-.button{
-    text-decoration: none;
-    color: whitesmoke;
-    padding: 10px;
-    border: 1px solid whitesmoke;
-    border-radius: 20px;
-    margin-right: 5px;
-}
-.container{
-    display: flex;
-    flex: 1;
-    margin: 10px;
-}
-.about{
-    flex: 1;
-}
-.about-image{
-    flex: 1;
-    filter: brightness(80%);
-    z-index: 1;
-}
-.about-section{
-    text-align: center;
-    background-color: cadetblue;
-    height: 50vh;
-}
-.header{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 
-} 
-.services{
-    text-align: center;
-    height: 50vh;
+.nav a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 300;
+  transition: color 0.3s;
 }
-.container-s{
-    display: flex;
-    justify-content:space-between ;
-    padding: 20px;
-    
-    
-    
-}
-.box{
-    flex: 1;
-    background-color: black;
-    margin: 5px;
-    border-radius: 5px;
-    height: 300px;
-}
-.about-image{
-margin-left: 100px;
-margin-right: 50px;
 
-padding-top:60px;
+.nav a:hover {
+  color: #5e9ea0;
+}
 
-
-}
-.contact{
-    text-align: center;
-    background-color:#5e9ea0;
-    min-height: 300px;
-}
-header{
-    position:sticky;
-   top: 0;
-   /* background-color: black; */
-   height:40px;
-   position: relative;
-  z-index: -1;
-  font-family: roboto;
-   
-}
+/* Home Section */
 .container {
-    @media (max-width:900px) {
-        display:block;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 100px 50px 50px;
 }
-.header{
-    @media (max-width:900px){
-        display: block;
-    }
-}
-.container-s{
-    @media (max-width:900px) {
 
-        display: block;
-        
-    }
+.about {
+  max-width: 50%;
 }
-.footer{
-    height: 100vh;
+
+.about h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.button {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 10px 20px;
+  border: 1px solid whitesmoke;
+  border-radius: 20px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.about-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* About Section */
+.about-section {
+  text-align: center;
+  background-color: cadetblue;
+  padding: 60px 20px;
+}
+
+.about-section h2 {
+  font-size: 30px;
+}
+
+/* Services Section */
+.services {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.container-s {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  background-color: black;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  color: whitesmoke;
+  transition: transform 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  background-color: #5e9ea0;
+  padding: 50px 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about,
+  .about-image {
+    max-width: 100%;
+  }
+
+  .container-s {
+    flex-direction: column;
+    align-items: center;
+  }
 }
